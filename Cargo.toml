@@ -1,6 +1,8 @@
+cargo-features = ["edition2024"]
+
 [package]
-name = "opendeck-akp03"
-version = "0.3.0"
+name = "opendeck-akp05"
+version = "0.1.0"
 edition = "2024"
 
 [dependencies]

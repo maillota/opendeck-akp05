@@ -1,13 +1,13 @@
 {
-  "Name": "Ajazz AKP03 / Mirabox N3",
-  "Description": "Device support plugin for Ajazz AKP03 (+variants)",
-  "Author": "Andrey Viktorov",
-  "Version": "0.3.0",
-  "PluginUUID": "st.lynx.plugins.opendeck-akp03",
-  "CodePathLin": "opendeck-akp03",
+  "Name": "Ajazz AKP05",
+  "Description": "Device support plugin for Ajazz AKP05 (+variants)",
+  "Author": "Alain Maillot / Andrey Viktorov",
+  "Version": "0.1.0",
+  "PluginUUID": "st.lynx.plugins.opendeck-akp05",
+  "CodePathLin": "opendeck-akp05",
   "Icon": "assets/icon",
   "Category": "Hardware",
   "OS": [{ "Platform": "linux" }],
   "Actions": [],
-  "DeviceNamespace": "n3"
+  "DeviceNamespace": "akp05"
 }

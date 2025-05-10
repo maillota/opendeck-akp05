@@ -1,4 +1,4 @@
-id := "st.lynx.plugins.opendeck-akp03.sdPlugin"
+id := "st.lynx.plugins.opendeck-akp05.sdPlugin"
 
 package: build zip
 
@@ -8,8 +8,8 @@ build:
     mkdir -p build/{{id}}
     cp -r assets build/{{id}}
     cp manifest.json build/{{id}}
-    cp target/release/opendeck-akp03 build/{{id}}
+    cp target/release/opendeck-akp05 build/{{id}}
 
 [working-directory: "build"]
 zip:
-    zip -r opendeck-akp03.sdPlugin {{id}}/
+    zip -r opendeck-akp05.sdPlugin {{id}}/

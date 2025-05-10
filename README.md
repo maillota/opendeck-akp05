@@ -1,21 +1,18 @@
 ![Plugin Icon](assets/icon.png)
 
-# OpenDeck Ajazz AKP03 / Mirabox N3 Plugin
+# OpenDeck Ajazz AKP05
 
-An unofficial plugin for Mirabox N3-family devices
+An unofficial plugin for Stream Deck+ clone devices
 
 ## Supported devices
 
-- Ajazz AKP03 (0300:1001)
-- Ajazz AKP03E (0300:3002)
-- Ajazz AKP03R (0300:1003)
-- Mirabox N3 (N3EN?) (6603:1003)
+- Ajazz AKP05 (0300:3004)
 
 ## Installation
 
 1. Download an archive from [releases](https://github.com/4ndv/opendeck-akp03/releases)
 2. In OpenDeck: Plugins -> Install from file
-3. Download [udev rules](./40-opendeck-akp03.rules) and install them by copying into `/etc/udev/rules.d/` and running `sudo udevadm control --reload-rules`
+3. Download [udev rules](./40-opendeck-akp05.rules) and install them by copying into `/etc/udev/rules.d/` and running `sudo udevadm control --reload-rules`
 4. Unplug and plug again the device, restart OpenDeck
 
 ## Opendeck version notice
