@@ -42,7 +42,7 @@ pub async fn dispatcher_task(mut disp_rx: Receiver<DeviceMessage>) {
                             ROW_COUNT as u8,
                             COL_COUNT as u8,
                             ENCODER_COUNT as u8,
-                            0,
+                            7, //stream deck plus
                         )
                         .await
                         .unwrap();

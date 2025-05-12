@@ -12,7 +12,6 @@ use tokio::sync::mpsc::{self, Receiver, Sender};
 
 use crate::mappings::{
     AJAZZ_VID, CandidateDevice, DEVICE_NAMESPACE, ENCODER_COUNT, IMAGE_FORMAT, KEY_COUNT, Kind,
-    MIRABOX_VID,
 };
 
 const POLL_RATE_MS: u64 = 50;
@@ -47,7 +46,7 @@ pub fn get_candidates() -> Vec<CandidateDevice> {
 
     let mut candidates: Vec<CandidateDevice> = Vec::new();
 
-    for (vid, pid, serial) in list_devices(&hidapi, &[AJAZZ_VID, MIRABOX_VID]) {
+    for (vid, pid, serial) in list_devices(&hidapi, &[AJAZZ_VID]) {
         let id = format!("{}-{}", DEVICE_NAMESPACE, serial);
 
         if let Some(kind) = Kind::from_vid_pid(vid, pid) {
@@ -199,7 +198,7 @@ fn handle_set_image(device: &Device, evt: SetImageEvent) -> Result<(), MirajazzE
     match (evt.position, evt.image) {
         (Some(position), Some(image)) => {
             // Device has 6 buttons with screens and 3 buttons without screens, so ignore anything above 5
-            if position > 5 {
+            if position > 14 {
                 return Ok(());
             }
 
@@ -223,7 +222,7 @@ fn handle_set_image(device: &Device, evt: SetImageEvent) -> Result<(), MirajazzE
         }
         (Some(position), None) => {
             // Device has 6 buttons with screens and 3 buttons without screens, so only clear below 6
-            if position > 5 {
+            if position > 14 {
                 return Ok(());
             }
 
