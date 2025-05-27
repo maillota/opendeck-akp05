@@ -40,8 +40,7 @@ impl Kind {
     /// Currently only one device does that
     pub fn supports_both_states(&self) -> bool {
         match &self {
-            Self::AKP05 => true,
-            _ => false,
+            Self::AKP05 => true
         }
     }
 

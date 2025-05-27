@@ -37,16 +37,16 @@ fn read_button_press(input: u8, state: u8) -> Result<DeviceInput, MirajazzError>
 
     let pressed_index: usize = match input {
         // main ten buttons
-        1 => 11,
-        2 => 12,
-        3 => 13,
-        4 => 14,
-        5 => 15,
-        6 => 6,
-        7 => 7,
-        8 => 8,
-        9 => 8,
-        10 => 10,
+        1 => 0xb,
+        2 => 0xc,
+        3 => 0xd,
+        4 => 0xe,
+        5 => 0xf,
+        6 => 0x6,
+        7 => 0x7,
+        8 => 0x8,
+        9 => 0x8,
+        10 => 0xa,
         // four "buttons" on the touch screen
         //64 => 1,
         //65 => 2,
@@ -67,17 +67,17 @@ fn read_encoder_value(input: u8) -> Result<DeviceInput, MirajazzError> {
 
     let (encoder, value): (usize, i8) = match input {
         // Left encoder
-        160 => (0, -1),
-        161 => (0, 1),
+        0xa0 => (0, -1),
+        0xa1 => (0, 1),
         // Second encoder
-        80 => (1, -1),
-        81 => (1, 1),
+        0x50 => (1, -1),
+        0x51 => (1, 1),
         // Third encoder
-        144 => (2, -1),
-        145 => (2, 1),
+        0x90 => (2, -1),
+        0x91 => (2, 1),
         // Right encoder
-        112 => (3, -1),
-        113 => (3, 1),
+        0x70 => (3, -1),
+        0x71 => (3, 1),
         _ => return Err(MirajazzError::BadData),
     };
 
@@ -89,10 +89,10 @@ fn read_encoder_press(input: u8, state: u8) -> Result<DeviceInput, MirajazzError
     let mut encoder_states = vec![false; ENCODER_COUNT];
 
     let encoder: usize = match input {
-        55 => 0, // Left encoder
-        53 => 1, // Second encoder
-        51 => 2, // Third encoder
-        56 => 3, // Right encoder
+        0x37 => 0, // Left encoder
+        0x35 => 1, // Second encoder
+        0x33 => 2, // Third encoder
+        0x36 => 3, // Right encoder
         _ => return Err(MirajazzError::BadData),
     };
 
